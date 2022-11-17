@@ -1,9 +1,9 @@
 const { ethers, run, network } = require("hardhat")
 
 async function main() {
-    const MyContractFactory = await ethers.getContractFactory("MyContract")
+    const myContractFactory = await ethers.getContractFactory("MyContract")
     console.log("Deploying contract...")
-    const myContract = await MyContractFactory.deploy()
+    const myContract = await myContractFactory.deploy()
     await myContract.deployed()
     console.log(`Deployed contract to: ${myContract.address}`)
     if (network.config.chainId === 5 && process.env.ETHERSCAN_API_KEY) {
