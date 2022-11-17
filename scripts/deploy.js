@@ -7,9 +7,12 @@ async function main() {
     await myContract.deployed()
     console.log(`Deployed contract to: ${myContract.address}`)
     if (network.config.chainId === 5 && process.env.ETHERSCAN_API_KEY) {
-        await myContract.deployTransaction.wait(6) // make sure the contract is already on Etherscan
+        await myContract.deployTransaction.wait(6) // wait 6 blocks to make sure the contract is already on Etherscan
         await verify(myContract.address, [])
     }
+
+    const helloWorld = await myContract.helloWorld()
+    console.log(helloWorld)
 }
 
 async function verify(contractAddress, args) {
