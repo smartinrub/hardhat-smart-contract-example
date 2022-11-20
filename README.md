@@ -20,7 +20,7 @@ COINMARKETCAP_API_KEY=<KEY_FROM_COINMARKETCAP>
 
 Create accounts on [Alchemy](https://www.alchemy.com), [Etherscan](https://etherscan.io) and [CoinMarketCap](https://coinmarketcap.com/api/) if you don't have them.
 
-## Quickstart
+## QuickStart
 
 ```bash
 cd hardhat-smart-contract-example
