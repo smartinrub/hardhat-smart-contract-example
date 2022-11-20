@@ -1,13 +1,19 @@
-# Sample Hardhat Project
+# Hardhat Smart Contract Example
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+## Deploy Contract
 
-Try running some of the following tasks:
+```
+yarn hardhat run scripts/deploy.js
+```
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
+## Run Tests
+
+```
+yarn hardhat test
+```
+
+## Access to Console
+
+```
+yarn hardhat console
 ```
