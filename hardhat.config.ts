@@ -1,10 +1,13 @@
-require("@nomicfoundation/hardhat-toolbox")
-require("dotenv").config()
-require("@nomiclabs/hardhat-etherscan")
-require("./tasks/my-task")
-require("./tasks/chain-id")
-require("hardhat-gas-reporter")
-require("solidity-coverage")
+import "@nomicfoundation/hardhat-toolbox"
+import "dotenv/config"
+import "@nomiclabs/hardhat-etherscan"
+import "./tasks/my-task"
+import "./tasks/chain-id"
+import "hardhat-gas-reporter"
+import "solidity-coverage"
+// This is to be able to use types with our contracts.
+// Then run "yarn hardhat typechain" to generate the type for the contract
+import "@typechain/hardhat"
 
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL || "https://eth-goerli"
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "0xkey"
