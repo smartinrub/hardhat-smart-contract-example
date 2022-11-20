@@ -1,12 +1,21 @@
 # Hardhat Smart Contract Example
 
-## Deploy Contract
+## Quickstart
+
+```bash
+cd hardhat-smart-contract-example
+yarn
+```
+
+## Usage
+
+### Deploy Contract
 
 ```
 yarn hardhat run scripts/deploy.js
 ```
 
-## Run Tests
+### Run Tests
 
 ```
 yarn hardhat test
@@ -18,13 +27,13 @@ to run the tests with the gas reporter:
 REPORT_GAS=true yarn hardhat test
 ```
 
-## Access to Console
+### Access to Console
 
 ```
 yarn hardhat console
 ```
 
-## Clean Project
+### Clean Project
 
 ```
 yarn hardhat clean
