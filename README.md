@@ -23,3 +23,9 @@ REPORT_GAS=true yarn hardhat test
 ```
 yarn hardhat console
 ```
+
+## Clean Project
+
+```
+yarn hardhat clean
+```
