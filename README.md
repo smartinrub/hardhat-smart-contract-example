@@ -4,8 +4,8 @@
 
 ### Prerequisites
 
-- Node
-- NPM
+-   Node
+-   NPM
 
 ### Installation
 

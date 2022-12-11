@@ -1,5 +1,6 @@
 {
   "name": "hardhat-smart-contract-example",
+  "author": "Sergio Martin Rubio",
   "version": "1.0.0",
   "license": "MIT",
   "devDependencies": {
@@ -19,7 +20,16 @@
     "hardhat-gas-reporter": "^1.0.9",
     "prettier": "^2.7.1",
     "prettier-plugin-solidity": "^1.0.0-rc.1",
+    "solhint": "^3.3.7",
     "solidity-coverage": "^0.8.2",
     "typechain": "^8.1.0"
+  },
+  "scripts": {
+    "test": "yarn hardhat test",
+    "test:staging": "yarn hardhat test --network goerli",
+    "lint": "yarn solhint 'contracts/*.sol'",
+    "lint:fix": "yarn solhint 'contracts/*.sol' fix",
+    "format": "yarn prettier --write .",
+    "coverage": "yarn hardhat coverage"
   }
 }
