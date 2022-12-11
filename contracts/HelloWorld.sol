@@ -3,7 +3,7 @@
 pragma solidity ^0.8.7;
 
 contract HelloWorld {
-    string from;
+    string private from;
 
     function helloWorld() public view returns (string memory) {
         if (bytes(from).length == 0) {
