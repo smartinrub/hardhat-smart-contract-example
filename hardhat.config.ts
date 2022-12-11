@@ -8,6 +8,7 @@ import "solidity-coverage"
 // This is to be able to use types with our contracts.
 // Then run "yarn hardhat typechain" to generate the type for the contract
 import "@typechain/hardhat"
+import "hardhat-deploy"
 
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL || "https://eth-goerli"
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "0xkey"
@@ -16,13 +17,23 @@ const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || "key"
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
+    solidity: "0.8.8",
     defaultNetwork: "hardhat",
     networks: {
         // chainId from https://goerli.net
-        goerli: { url: GOERLI_RPC_URL, accounts: [PRIVATE_KEY], chainId: 5 },
+        goerli: {
+            url: GOERLI_RPC_URL,
+            accounts: [PRIVATE_KEY],
+            chainId: 5,
+            blockConfirmations: 6,
+        },
         localhost: { url: "http://127.0.0.1:8545/", chainId: 31337 },
     },
-    solidity: "0.8.8",
+    namedAccounts: {
+        deployer: {
+            default: 0,
+        },
+    },
     etherscan: {
         apiKey: ETHERSCAN_API_KEY,
     },

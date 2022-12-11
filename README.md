@@ -31,20 +31,28 @@ yarn
 
 ### Deploy Contract
 
+Deploy the contract to a local node:
+
+```bash
+yarn hardhat node
 ```
-yarn hardhat run scripts/deploy.js
+
+Example for deploying to the Goerli testnet:
+
+```bash
+yarn hardhat deploy --network goerli
 ```
 
 ### Run Tests
 
-```
-yarn hardhat test
+```bash
+yarn test
 ```
 
 to run the tests with the gas reporter:
 
-```
-REPORT_GAS=true yarn hardhat test
+```bash
+REPORT_GAS=true yarn test
 ```
 
 ### Access to Console
