@@ -1,15 +1,15 @@
 import { ethers } from "hardhat"
-import { expect, assert } from "chai"
-import { MyContract, MyContract__factory } from "../typechain-types"
+import { expect } from "chai"
+import { HelloWorld, HelloWorld__factory } from "../typechain-types"
 
-describe("MyContract", function () {
-    let myContractFactory: MyContract__factory
-    let myContract: MyContract
+describe("HelloWorld", function () {
+    let myContractFactory: HelloWorld__factory
+    let myContract: HelloWorld
 
     beforeEach(async function () {
         myContractFactory = (await ethers.getContractFactory(
-            "MyContract"
-        )) as MyContract__factory
+            "HelloWorld"
+        )) as HelloWorld__factory
         myContract = await myContractFactory.deploy()
     })
 
