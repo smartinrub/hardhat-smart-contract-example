@@ -1,18 +1,24 @@
 import { ethers, run, network } from "hardhat"
 
 async function main() {
-    const myContractFactory = await ethers.getContractFactory("MyContract")
+    const helloWorldFactory = await ethers.getContractFactory("HelloWorld")
     console.log("Deploying contract...")
-    const myContract = await myContractFactory.deploy()
-    await myContract.deployed()
-    console.log(`Deployed contract to: ${myContract.address}`)
+    const helloWorld = await helloWorldFactory.deploy()
+    await helloWorld.deployed()
+    console.log(`Deployed contract to: ${helloWorld.address}`)
     if (network.config.chainId === 5 && process.env.ETHERSCAN_API_KEY) {
-        await myContract.deployTransaction.wait(6) // wait 6 blocks to make sure the contract is already on Etherscan
-        await verify(myContract.address, [])
+        await helloWorld.deployTransaction.wait(6) // wait 6 blocks to make sure the contract is already on Etherscan
+        await verify(helloWorld.address, [])
     }
 
-    const helloWorld = await myContract.helloWorld()
-    console.log(helloWorld)
+    const result = await helloWorld.helloWorld()
+    console.log(result)
+
+    // update hello world
+    const transactionResponse = await helloWorld.updateFrom("Sergio")
+    await transactionResponse.wait(1)
+    const updatedResult = await helloWorld.helloWorld()
+    console.log(updatedResult)
 }
 
 async function verify(contractAddress: string, args: any[]) {
